@@ -1,10 +1,12 @@
 import { UserButton } from "@clerk/nextjs";
+import Header from "./_shared/Header";
+import Hero from "./_shared/Hero";
 
 export default function Home() {
   return (
-    <div className="bg-white">
-      <h1 className="font-dm-sans text-2xl font-bold">Hello World</h1>
-      <UserButton />
+    <div className="bg-white font-dm-sans">
+      <Header />
+      <Hero />
     </div>
   );
 }

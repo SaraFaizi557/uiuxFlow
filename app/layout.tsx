@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from '@clerk/nextjs'
 import Provider from "./provider";
-import { DM_Sans } from "next/font/google";
+import { Artifika, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const artifika = Artifika({
+  variable: "--font-artifika",
+  weight: "400",
   subsets: ["latin"],
 });
 
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+
 export const metadata: Metadata = {
-  title: "UI UX Mockup generator App",
-  description: "Generate High quality Free UIUX Mobile and Web Mockup designs",
+  title: "UI UX Flow",
+  description: "Generate High quality UI/UX designs with AI. Perfect for web and mobile apps.",
 };
 
 export default function RootLayout({
@@ -23,11 +31,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${dmSans.variable} antialiased`}
+          className={`${artifika.variable} ${dmSans.variable} antialiased`}
         >
-          <Provider>
-            {children}
-          </Provider>
+            <Provider>
+              {children}
+            </Provider>
         </body>
       </html>
     </ClerkProvider>
